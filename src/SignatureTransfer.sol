@@ -86,8 +86,9 @@ contract SignatureTransfer is ISignatureTransfer, EIP712 {
         string calldata witnessTypeString,
         bytes calldata signature
     ) external {
+        bytes32 dataHash = permit.hashWithWitness(witness, witnessTypeString);
         _permitTransferFrom(
-            permit, transferDetails, owner, permit.hashWithWitness(witness, witnessTypeString), signature
+            permit, transferDetails, owner, dataHash, signature
         );
     }
 
