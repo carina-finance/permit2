@@ -81,6 +81,8 @@ forge snapshot
 
 ### Deploy
 
+Copy the .env.example file to a new file named .env, then update the variables in .env with your own values.
+
 
 ```sh
 make deploy-permit2
